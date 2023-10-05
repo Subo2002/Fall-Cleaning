@@ -1,16 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://djglegqq8ixvb"]
+[gd_scene load_steps=5 format=3 uid="uid://djglegqq8ixvb"]
 
+[ext_resource type="Script" path="res://Scripts/leaf.gd" id="1_84ff3"]
 [ext_resource type="Texture2D" uid="uid://c6yle71uxba4c" path="res://icon.svg" id="1_ojvn5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ee6y"]
 size = Vector2(48, 21)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ql81"]
+
 [node name="Leaf" type="RigidBody2D"]
 z_index = 1
 collision_layer = 2
 gravity_scale = 0.0
+lock_rotation = true
 linear_damp = 10.0
 angular_damp = 10.0
+script = ExtResource("1_84ff3")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -21,3 +26,14 @@ shape = SubResource("RectangleShape2D_8ee6y")
 modulate = Color(1, 0.384314, 0.164706, 1)
 scale = Vector2(0.4, 0.2)
 texture = ExtResource("1_ojvn5")
+
+[node name="PileArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape2D" parent="PileArea"]
+scale = Vector2(2, 1)
+shape = SubResource("CircleShape2D_5ql81")
+
+[connection signal="area_entered" from="PileArea" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="PileArea" to="." method="_on_area_exited"]
