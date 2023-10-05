@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c6yle71uxba4c" path="res://icon.svg" id="2_bblnd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghycw"]
-radius = 30.0
+radius = 18.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_gjd87")
@@ -16,6 +16,6 @@ scale = Vector2(0.7, 1)
 texture = ExtResource("2_bblnd")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2(1, -29)
+position = Vector2(0, -18)
 shape = SubResource("CircleShape2D_ghycw")
 debug_color = Color(0.964706, 0, 0.494118, 0.419608)
