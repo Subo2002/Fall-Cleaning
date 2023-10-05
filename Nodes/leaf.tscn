@@ -6,6 +6,7 @@
 size = Vector2(48, 21)
 
 [node name="Leaf" type="RigidBody2D"]
+z_index = 1
 collision_layer = 2
 gravity_scale = 0.0
 linear_damp = 10.0
