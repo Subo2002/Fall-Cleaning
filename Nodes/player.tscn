@@ -3,19 +3,19 @@
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_gjd87"]
 [ext_resource type="Texture2D" uid="uid://c6yle71uxba4c" path="res://icon.svg" id="2_bblnd"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wuo7j"]
-radius = 45.0
-height = 126.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_ghycw"]
+radius = 30.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_gjd87")
-
-[node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -64)
-shape = SubResource("CapsuleShape2D_wuo7j")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 y_sort_enabled = true
 position = Vector2(0, -64)
 scale = Vector2(0.7, 1)
 texture = ExtResource("2_bblnd")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(1, -29)
+shape = SubResource("CircleShape2D_ghycw")
+debug_color = Color(0.964706, 0, 0.494118, 0.419608)
