@@ -1,7 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://djglegqq8ixvb"]
+[gd_scene load_steps=11 format=3 uid="uid://bl5um8kf3eqa4"]
 
 [ext_resource type="Script" path="res://Scripts/leaf.gd" id="1_84ff3"]
 [ext_resource type="Texture2D" uid="uid://dcflkv6wlsclk" path="res://Assets/Art/Objects/leaf1.png" id="2_h3e46"]
+[ext_resource type="Material" uid="uid://d3k7qsvyufkj" path="res://Resources/LeafShaders/leafyellow.tres" id="2_j48cl"]
+[ext_resource type="Material" uid="uid://bkf3eav71fl1j" path="res://Resources/LeafShaders/leafred.tres" id="3_f46d1"]
+[ext_resource type="Material" uid="uid://c4ip0s6wgu7t" path="res://Resources/LeafShaders/leafbrown.tres" id="4_61cdm"]
+[ext_resource type="Material" uid="uid://bk0g31ifq66cw" path="res://Resources/LeafShaders/leaforange.tres" id="5_otreh"]
+[ext_resource type="Texture2D" uid="uid://cr0m5u6msfs4s" path="res://Assets/Art/Objects/leaf2.png" id="7_yl7jk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xt6b3"]
 radius = 11.25
@@ -18,8 +23,11 @@ gravity_scale = 0.0
 linear_damp = 10.0
 angular_damp = 10.0
 script = ExtResource("1_84ff3")
+shaders = Array[ShaderMaterial]([ExtResource("2_j48cl"), ExtResource("3_f46d1"), ExtResource("4_61cdm"), ExtResource("5_otreh")])
+textures = Array[Texture]([ExtResource("2_h3e46"), ExtResource("7_yl7jk")])
 
 [node name="Sprite" type="Sprite2D" parent="."]
+material = ExtResource("2_j48cl")
 scale = Vector2(3, 3)
 texture = ExtResource("2_h3e46")
 

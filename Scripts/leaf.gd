@@ -6,6 +6,14 @@ var pile: Array[Leaf]
 
 var height: float = 0
 
+@export var shaders: Array[ShaderMaterial]
+
+@export var textures: Array[Texture]
+
+func _ready():
+	$Sprite.material = shaders[randi() % shaders.size()]
+	$Sprite.texture = textures[randi() % textures.size()]
+
 func _on_area_entered(area):
 	if position.y > area.get_parent().position.y:
 		pile.append(area.get_parent())

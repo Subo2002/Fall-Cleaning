@@ -13,6 +13,8 @@ func _ready():
 
 func _physics_process(_delta):
 	
+	var move = Vector2.ZERO
+
 	if Input.is_action_just_pressed("Rake"):
 		_rake_action()
 
@@ -26,15 +28,18 @@ func _physics_process(_delta):
 
 	var directionLR = Input.get_axis("PlayerLeft", "PlayerRight")
 	if directionLR:
-		velocity.x = directionLR * speed
+		move.x = directionLR
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 
 	var directionUD = Input.get_axis("PlayerUp", "PlayerDown")
 	if directionUD:
-		velocity.y = directionUD * speed
+		move.y = directionUD
 	else:
 		velocity.y = move_toward(velocity.y, 0, speed)
+
+	velocity = move.normalized() * speed
+	velocity.y *= 0.5
 
 	move_and_slide()
 
