@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cawlai8p70ogv"]
+[gd_scene load_steps=2 format=3 uid="uid://cawlai8p70ogv"]
+
+[ext_resource type="Script" path="res://Scripts/VolumeSlider.gd" id="1_uwtrt"]
 
 [node name="Volume Menu" type="Control"]
 layout_mode = 3
@@ -19,3 +21,38 @@ offset_right = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Volume Stuff"
+
+[node name="VolumeSliderMaster" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 278.0
+offset_right = 799.0
+offset_bottom = 358.0
+script = ExtResource("1_uwtrt")
+
+[node name="VolumeSliderMusic" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 360.0
+offset_right = 796.0
+offset_bottom = 440.0
+script = ExtResource("1_uwtrt")
+busName = "Music"
+
+[node name="VolumeSliderSFX" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 459.0
+offset_right = 800.0
+offset_bottom = 539.0
+script = ExtResource("1_uwtrt")
+busName = "SFX"
+
+[node name="VolumeSliderUI" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 562.0
+offset_right = 804.0
+offset_bottom = 642.0
+script = ExtResource("1_uwtrt")
+busName = "UI"

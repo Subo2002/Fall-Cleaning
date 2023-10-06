@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2mvx3n0yuosr"]
+
+[ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="1_3s6pc"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_3s6pc")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 748.0
+offset_top = 310.0
+offset_right = 1172.0
+offset_bottom = 925.0
+
+[node name="ResumeButton" type="Button" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 83.0
+offset_right = 316.0
+offset_bottom = 184.0
+text = "RESUME"
+
+[node name="SettingsButton" type="Button" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 233.0
+offset_right = 318.0
+offset_bottom = 334.0
+text = "SETTINGS"
+
+[node name="MenuButton" type="Button" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 404.0
+offset_right = 322.0
+offset_bottom = 505.0
+text = "MENU"
+
+[connection signal="pressed" from="Control/Panel/ResumeButton" to="." method="_resume"]
+[connection signal="pressed" from="Control/Panel/SettingsButton" to="." method="_open_settings"]
+[connection signal="pressed" from="Control/Panel/MenuButton" to="." method="_main_menu"]

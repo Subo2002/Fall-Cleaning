@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Menus/Settings Menu.gd" id="1_f1ad7"]
 [ext_resource type="PackedScene" uid="uid://cawlai8p70ogv" path="res://Menus/volume_menu.tscn" id="2_0rphr"]
-[ext_resource type="PackedScene" uid="uid://bcyp2wbdqjeh0" path="res://place_holder_more_settings.tscn" id="3_y3w5e"]
+[ext_resource type="PackedScene" uid="uid://uex3wb6kkc2v" path="res://place_holder_more_settings.tscn" id="3_y3w5e"]
 
 [node name="Settings Menu" type="Control"]
 layout_mode = 3
@@ -16,6 +16,15 @@ volume_menu_path = NodePath("Mini Window/Volume Menu")
 other_setting_button_path = NodePath("Settings Selector/Place Holder Other Setting")
 other_setting_menu_path = NodePath("Mini Window/Place Holder More Settings")
 
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(0.105882, 0.105882, 0.105882, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Page Title" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 264.0
@@ -24,6 +33,8 @@ offset_right = 346.0
 offset_bottom = 52.0
 text = "Settings"
 alignment = 1
+caret_blink = true
+caret_blink_interval = 0.5
 
 [node name="Settings Selector" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -46,6 +57,7 @@ layout_mode = 2
 text = "More settings"
 
 [node name="Mini Window" type="CanvasLayer" parent="."]
+layer = 6
 
 [node name="Volume Menu" parent="Mini Window" instance=ExtResource("2_0rphr")]
 visible = false

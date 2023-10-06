@@ -1,6 +1,5 @@
 extends Control
 
-
 var last_pressed : Button
 var last_mini_menu : Control
 
