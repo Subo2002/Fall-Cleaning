@@ -34,7 +34,7 @@ func _leaf_colour() -> Color:
 	if rand < 0.2:
 		colour = Color(1.0, 0.3, 0.15)
 	elif rand < 0.4:
-		colour = Color(1.0, 1.0, 0.2)
+		colour = Color(1.0, 1.0, 0.0)
 	elif rand < 0.6:
 		colour = Color(1.0, 0.2, 0.2)
 	elif rand < 0.8:

@@ -45,10 +45,10 @@ func _rake_action():
 	rake.visible = true
 	rake.collision_layer = 1
 
-	rake.global_position = position + Vector2(0, 60)
+	rake.global_position = position + Vector2(0, 70)
 
 	var tween = create_tween()
-	tween.tween_property(rake, "global_position", position + Vector2(0, 20), 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(rake, "global_position", position + Vector2(0, 30), 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	tween.tween_callback(Callable(_end_rake_action))
 
 func _end_rake_action():
