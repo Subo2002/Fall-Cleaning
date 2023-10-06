@@ -1,13 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhxdl7n8h0w5n"]
+[gd_scene load_steps=3 format=3 uid="uid://dhxdl7n8h0w5n"]
 
 [ext_resource type="Script" path="res://Menus/Start Menu.gd" id="1_3667t"]
+[ext_resource type="Script" path="res://Scripts/MenuButton.gd" id="2_cwii4"]
 
 [node name="Start Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_top = -1.0
-offset_right = 641.0
-offset_bottom = 360.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(959, 598)
 script = ExtResource("1_3667t")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -21,6 +24,7 @@ offset_right = -248.0
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(711, 500)
 theme_override_constants/separation = 39
 alignment = 1
 
@@ -28,16 +32,19 @@ alignment = 1
 layout_mode = 2
 text = "Start
 "
+script = ExtResource("2_cwii4")
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Settings
 "
+script = ExtResource("2_cwii4")
 
 [node name="Quit Game" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit
 "
+script = ExtResource("2_cwii4")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 0
