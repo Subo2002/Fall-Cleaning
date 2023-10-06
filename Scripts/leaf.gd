@@ -18,7 +18,7 @@ func _physics_process(_delta):
 	if pile.size() > 0:
 		height = 0
 		for leaf in pile:
-			height -= 2
+			height -= (20 - (position - leaf.position).length()) / 5
 		$Sprite.position = Vector2(0, height)
 	else:
 		$Sprite.position = Vector2.ZERO
