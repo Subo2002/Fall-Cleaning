@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmqeprc6ooiyy"]
+[gd_scene load_steps=5 format=3 uid="uid://dmqeprc6ooiyy"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_gjd87"]
 [ext_resource type="Texture2D" uid="uid://c6yle71uxba4c" path="res://icon.svg" id="2_bblnd"]
@@ -6,16 +6,32 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghycw"]
 radius = 10.198
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gun82"]
+size = Vector2(64, 8)
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_gjd87")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, -64)
+position = Vector2(0, -49)
 scale = Vector2(0.7, 1)
 texture = ExtResource("2_bblnd")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
 shape = SubResource("CircleShape2D_ghycw")
 debug_color = Color(0.964706, 0, 0.494118, 0.419608)
+
+[node name="Rake" type="AnimatableBody2D" parent="."]
+position = Vector2(0, 50)
+collision_layer = 16
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Rake"]
+modulate = Color(0.152941, 0.152941, 0.152941, 1)
+position = Vector2(-2.38419e-07, -0.250001)
+scale = Vector2(0.5, 0.0664062)
+texture = ExtResource("2_bblnd")
+
+[node name="Shape" type="CollisionShape2D" parent="Rake"]
+shape = SubResource("RectangleShape2D_gun82")

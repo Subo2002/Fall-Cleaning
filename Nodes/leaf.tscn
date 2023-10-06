@@ -13,21 +13,18 @@ radius = 1.0
 
 [node name="Leaf" type="RigidBody2D"]
 z_index = 1
-collision_layer = 2
+collision_layer = 18
 gravity_scale = 0.0
-lock_rotation = true
 linear_damp = 10.0
 angular_damp = 10.0
 script = ExtResource("1_84ff3")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-modulate = Color(1, 0.384314, 0.164706, 1)
+modulate = Color(0.72549, 0.533333, 0.231373, 1)
 scale = Vector2(0.4, 0.2)
 texture = ExtResource("1_ojvn5")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 5.96046e-08)
-scale = Vector2(2, 1)
 shape = SubResource("CircleShape2D_xt6b3")
 
 [node name="PileArea" type="Area2D" parent="."]
@@ -41,6 +38,7 @@ shape = SubResource("CircleShape2D_5ql81")
 collision_layer = 8
 collision_mask = 8
 gravity_scale = 0.0
+lock_rotation = true
 
 [node name="Shape" type="CollisionShape2D" parent="Body"]
 shape = SubResource("CircleShape2D_dh1o2")
