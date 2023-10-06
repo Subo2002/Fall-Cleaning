@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://deq4ac25rc6nq"]
+[gd_scene load_steps=13 format=3 uid="uid://deq4ac25rc6nq"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_8ddd2"]
 [ext_resource type="PackedScene" uid="uid://dmqeprc6ooiyy" path="res://Nodes/player.tscn" id="1_ex7n1"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dfjemx1tbcbuj" path="res://Assets/Art/Environment/fencetiles.png" id="4_2lgqh"]
 [ext_resource type="Texture2D" uid="uid://bcu758gjswfpi" path="res://Assets/Art/Environment/grasstile.png" id="4_r4a2d"]
 [ext_resource type="PackedScene" uid="uid://c2mvx3n0yuosr" path="res://Nodes/pause_menu.tscn" id="6_4xgn4"]
+[ext_resource type="PackedScene" uid="uid://8gb2kkm4pt4r" path="res://Nodes/rake.tscn" id="7_dgchv"]
+[ext_resource type="Script" path="res://Scripts/rake.gd" id="8_aau1s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uh28x"]
 texture = ExtResource("4_2lgqh")
@@ -89,5 +91,13 @@ layer_1/tile_data = PackedInt32Array(786432, 65536, 0, 720896, 65536, 0, 655361,
 z_index = 1
 position = Vector2(205, 61)
 
+[node name="Rake" parent="GamePlay" groups=["Rake"] instance=ExtResource("7_dgchv")]
+z_index = 1
+position = Vector2(118, 220)
+script = ExtResource("8_aau1s")
+
 [node name="PauseMenu" parent="." instance=ExtResource("6_4xgn4")]
 visible = false
+
+[node name="Leaf" parent="." instance=ExtResource("2_mi2uv")]
+position = Vector2(118, 228)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://8gb2kkm4pt4r"]
+
+[ext_resource type="Texture2D" uid="uid://dkksq5fe6d2" path="res://Assets/Art/Objects/rakeUp.png" id="1_bpppl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gun82"]
+size = Vector2(64, 8)
+
+[node name="Rake" type="AnimatableBody2D"]
+position = Vector2(0, 50)
+collision_layer = 16
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -52)
+scale = Vector2(3, 3)
+texture = ExtResource("1_bpppl")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gun82")
+one_way_collision = true
