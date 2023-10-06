@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://3i5qi4o01j42"]
+
+[ext_resource type="Script" path="res://Menus/Settings Menu.gd" id="1_f1ad7"]
+[ext_resource type="PackedScene" uid="uid://cawlai8p70ogv" path="res://Menus/volume_menu.tscn" id="2_0rphr"]
+[ext_resource type="PackedScene" uid="uid://bcyp2wbdqjeh0" path="res://place_holder_more_settings.tscn" id="3_y3w5e"]
+
+[node name="Settings Menu" type="Control"]
+layout_mode = 3
+anchor_right = 1.003
+anchor_bottom = 0.994
+offset_right = 0.0799561
+offset_bottom = 0.160004
+script = ExtResource("1_f1ad7")
+volume_button_path = NodePath("Settings Selector/Volume")
+volume_menu_path = NodePath("Mini Window/Volume Menu")
+other_setting_button_path = NodePath("Settings Selector/Place Holder Other Setting")
+other_setting_menu_path = NodePath("Mini Window/Place Holder More Settings")
+
+[node name="Page Title" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 21.0
+offset_right = 346.0
+offset_bottom = 52.0
+text = "Settings"
+alignment = 1
+
+[node name="Settings Selector" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 56.0
+offset_right = -504.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Volume" type="Button" parent="Settings Selector"]
+layout_mode = 2
+text = "Volume
+"
+
+[node name="Place Holder Other Setting" type="Button" parent="Settings Selector"]
+layout_mode = 2
+text = "More settings"
+
+[node name="Mini Window" type="CanvasLayer" parent="."]
+
+[node name="Volume Menu" parent="Mini Window" instance=ExtResource("2_0rphr")]
+visible = false
+offset_left = 143.0
+offset_top = 57.0
+
+[node name="Place Holder More Settings" parent="Mini Window" instance=ExtResource("3_y3w5e")]
+visible = false
+offset_left = 147.0
+offset_top = 59.0
+
+[connection signal="pressed" from="Settings Selector/Volume" to="." method="_on_volume_pressed"]
+[connection signal="pressed" from="Settings Selector/Place Holder Other Setting" to="." method="_on_place_holder_other_setting_pressed"]
