@@ -22,6 +22,7 @@ func _rake_action():
 	raking = true
 	visible = true
 	
+	get_tree().get_first_node_in_group("SoundPlayer")._PlaySound(randi_range(3,7))
 	global_position = player.position + Vector2(0, 30)
 	var tween = create_tween()
 	tween.tween_property(self, "global_position", player.position + Vector2(0, 70), 0.2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
