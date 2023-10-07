@@ -6,6 +6,16 @@ var pile: Array[Leaf]
 
 var height: float = 0
 
+var in_zone = false
+
+@export var shaders: Array[ShaderMaterial]
+
+@export var textures: Array[Texture]
+
+func _ready():
+	$Sprite.material = shaders[randi() % shaders.size()]
+	$Sprite.texture = textures[randi() % textures.size()]
+
 func _on_area_entered(area):
 	if position.y > area.get_parent().position.y:
 		pile.append(area.get_parent())
@@ -19,6 +29,6 @@ func _physics_process(_delta):
 		height = 0
 		for leaf in pile:
 			height -= (20 - (position - leaf.position).length()) / 5
-		$Sprite.position = Vector2(0, height)
+		$Sprite.position = Vector2(0, height).rotated(-rotation)
 	else:
 		$Sprite.position = Vector2.ZERO
