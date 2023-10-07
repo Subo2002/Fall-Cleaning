@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://besf5mmnl26go"]
+[gd_scene load_steps=15 format=3 uid="uid://besf5mmnl26go"]
 
 [ext_resource type="Script" path="res://Scripts/scene_manager.gd" id="1_ghll3"]
 [ext_resource type="PackedScene" uid="uid://deq4ac25rc6nq" path="res://Scenes/game.tscn" id="2_20sao"]
@@ -8,7 +8,12 @@
 [ext_resource type="AudioStream" uid="uid://2yhwts1ruge5" path="res://Assets/Audio/SFX/slider_one_shot.wav" id="6_cvqxw"]
 [ext_resource type="AudioStream" uid="uid://dbfcula648lmq" path="res://Assets/Audio/SFX/accept.wav" id="7_fmf2o"]
 [ext_resource type="AudioStream" uid="uid://0pyxucjks435" path="res://Assets/Audio/SFX/back.wav" id="8_f6q4g"]
+[ext_resource type="AudioStream" uid="uid://csec02j1eukf2" path="res://Assets/Audio/SFX/raking_1.wav" id="9_4q2wb"]
 [ext_resource type="AudioStream" uid="uid://c4d8fv7yb80xg" path="res://Assets/Audio/Music/Fall_Cleaning_Music_Loop.ogg" id="9_b66rg"]
+[ext_resource type="AudioStream" uid="uid://ce834nplci12g" path="res://Assets/Audio/SFX/raking_2.wav" id="10_6yxbu"]
+[ext_resource type="AudioStream" uid="uid://b67m87ko4bita" path="res://Assets/Audio/SFX/raking_3.wav" id="11_o1raa"]
+[ext_resource type="AudioStream" uid="uid://bn3xh8rk3mpag" path="res://Assets/Audio/SFX/raking_4.wav" id="12_n1cyr"]
+[ext_resource type="AudioStream" uid="uid://cnyydilbvlyti" path="res://Assets/Audio/SFX/raking_5.wav" id="13_81vf0"]
 
 [node name="SceneManager" type="Node" groups=["SceneManager"]]
 process_mode = 3
@@ -25,7 +30,7 @@ offset_bottom = 0.160034
 
 [node name="SoundPlayer" type="Node" parent="." groups=["SoundPlayer"]]
 script = ExtResource("5_npskh")
-sounds = Array[AudioStream]([ExtResource("6_cvqxw"), ExtResource("7_fmf2o"), ExtResource("8_f6q4g")])
+sounds = Array[AudioStream]([ExtResource("6_cvqxw"), ExtResource("7_fmf2o"), ExtResource("8_f6q4g"), ExtResource("9_4q2wb"), ExtResource("10_6yxbu"), ExtResource("11_o1raa"), ExtResource("12_n1cyr"), ExtResource("13_81vf0")])
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_b66rg")
