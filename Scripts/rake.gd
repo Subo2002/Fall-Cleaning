@@ -31,7 +31,6 @@ func _rake_action():
 
 func _collision():
 	collision_layer = 1
-	print("Rake collision")
 
 func _end_rake_action():
 	raking = false

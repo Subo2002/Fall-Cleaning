@@ -6,6 +6,8 @@ var pile: Array[Leaf]
 
 var height: float = 0
 
+var in_zone = false
+
 @export var shaders: Array[ShaderMaterial]
 
 @export var textures: Array[Texture]
