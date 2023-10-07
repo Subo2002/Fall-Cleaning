@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://deq4ac25rc6nq"]
+[gd_scene load_steps=16 format=3 uid="uid://deq4ac25rc6nq"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_8ddd2"]
 [ext_resource type="PackedScene" uid="uid://dmqeprc6ooiyy" path="res://Nodes/player.tscn" id="1_ex7n1"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://claubkjtx76c1" path="res://Assets/Art/Environment/pilezone.png" id="6_6kmh3"]
 [ext_resource type="PackedScene" uid="uid://8gb2kkm4pt4r" path="res://Nodes/rake.tscn" id="7_dgchv"]
 [ext_resource type="Script" path="res://Scripts/rake.gd" id="8_aau1s"]
+[ext_resource type="AudioStream" uid="uid://c63tkuyt6lkqg" path="res://Assets/Audio/Music/fall_cleaning_ambience.ogg" id="10_s7p32"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uh28x"]
 texture = ExtResource("4_2lgqh")
@@ -153,6 +154,11 @@ offset_right = 897.0
 offset_bottom = 132.0
 theme_override_font_sizes/font_size = 40
 text = "PERCENT CLEANED: 0.0%"
+
+[node name="AmbienceSounds" type="AudioStreamPlayer" parent="GamePlay"]
+stream = ExtResource("10_s7p32")
+autoplay = true
+bus = &"Ambience"
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_4xgn4")]
 visible = false

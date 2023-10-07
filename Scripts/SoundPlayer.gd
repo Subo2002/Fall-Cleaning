@@ -1,6 +1,6 @@
 extends Node
 
-enum SoundType { MasterBus = 0, MusicBus = 1, SfxBus = 2, UiBus = 3}
+enum SoundType { MasterBus = 0, MusicBus = 1, SfxBus = 2, UiBus = 3, AmbienceBus = 4}
 
 @export var sounds: Array[AudioStream]
 

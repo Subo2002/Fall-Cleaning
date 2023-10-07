@@ -56,3 +56,12 @@ offset_right = 804.0
 offset_bottom = 642.0
 script = ExtResource("1_uwtrt")
 busName = "UI"
+
+[node name="VolumeSliderAmbience" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 672.0
+offset_right = 797.0
+offset_bottom = 752.0
+script = ExtResource("1_uwtrt")
+busName = "Ambience"
